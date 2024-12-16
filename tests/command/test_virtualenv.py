@@ -44,7 +44,7 @@ def test_install_fail_with_logs(caplog, tmpdir):
 
 
 def test_install_uses_editable_for_local(caplog, tmpdir):
-    envdir = tmpdir.mkdir('env')
+    envdir = tmpdir.mkdir("env")
 
     env = VirtualEnvironmentExt(str(envdir))
     env.install = mock.Mock()

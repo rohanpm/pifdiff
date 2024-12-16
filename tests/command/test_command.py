@@ -140,7 +140,8 @@ def test_typical_diff(workdir, testapi, testname, exitcode, extra_args, caplog):
 
 
 @mark.parametrize(
-    "testapi,exitcode,stdout", [("minorbad", 0, "1.1.0\n"), ("minorbad_nover", 30, "")],
+    "testapi,exitcode,stdout",
+    [("minorbad", 0, "1.1.0\n"), ("minorbad_nover", 30, "")],
 )
 def test_genversion_diff(workdir, testapi, exitcode, stdout, capsys):
     sys.argv = [

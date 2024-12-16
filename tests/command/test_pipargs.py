@@ -55,7 +55,12 @@ def test_all_pip_args():
 
 
 def test_empty_pip_args():
-    parsed = PARSER.parse_args(["src1", "src2",])
+    parsed = PARSER.parse_args(
+        [
+            "src1",
+            "src2",
+        ]
+    )
 
     pipargs = PipArgs(parsed)
 

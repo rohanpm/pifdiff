@@ -203,12 +203,12 @@ def egg_for_root(root_name: str):
 
 def get_version_importlib(module) -> Optional[str]:
     module_file = module.__file__
-    if module_file.endswith('.pyc'):
+    if module_file.endswith(".pyc"):
         module_file = module_file[:-1]
 
     for dist in pkg_resources.working_set:  # pylint: disable=not-an-iterable
         name = dist.project_name
-        for file in (dist_files(name) or []):
+        for file in dist_files(name) or []:
             if str(file.locate()) == module_file:
                 return dist_version(name)
 
